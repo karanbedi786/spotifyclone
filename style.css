@@ -97,7 +97,7 @@ body{
     flex-wrap: wrap;
     margin: 20px;
     overflow-y: auto;
-    max-height: 60vh;
+    max-height: 65vh;
 }
 .card{
     width: 200px;
@@ -170,6 +170,9 @@ body{
     width: 71%;
     padding: 12px;
     min-height: 30px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
 }
 .songbuttons{
     display: flex;
@@ -216,7 +219,7 @@ body{
     border-radius: 10px;
     position: absolute;
     background-color: rgb(254, 255, 255);
-    bottom: 0;
+    bottom: 5px;
     margin: 5px;
     cursor: pointer;
 }
@@ -277,6 +280,7 @@ body{
         width: 360px;
         background-color: black;
         padding: 0;
+        
     }
     .right{
         width: 100vw;
