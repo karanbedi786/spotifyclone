@@ -103,6 +103,13 @@ async function displayAlbums() {
     </div>`;
     }
   }
+
+  Array.from(document.getElementsByClassName("card")).forEach((e) => {
+    e.addEventListener("click", async (item) => {
+      songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
+      playMusic(songs[0])
+    });
+  });
 }
 
 async function main() {
@@ -168,12 +175,7 @@ async function main() {
       }
     });
 
-  Array.from(document.getElementsByClassName("card")).forEach((e) => {
-    e.addEventListener("click", async (item) => {
-      songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
-      playMusic(songs[0])
-    });
-  });
+ 
 
   document.querySelector(".volume>img").addEventListener("click",(e)=>{
     if(e.target.src.includes("volume.svg")){
