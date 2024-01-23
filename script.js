@@ -182,7 +182,7 @@ async function main() {
     }
     else{
       e.target.src = e.target.src.replace("mute.svg","volume.svg")
-      currentSong.volume = .10
+      currentSong.volume = document.querySelector(".range").getElementsByTagName("input")[0].value/100
     }
   })
 }
