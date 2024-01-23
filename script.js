@@ -25,6 +25,7 @@ async function getSongs(folder) {
   songs = [];
   for (let element of as) {
     if (element.href.endsWith(".mp3")) {
+      // console.log("hi")
       songs.push(element.href.split(`/${folder}/`)[1]);
     }
   }
@@ -49,10 +50,11 @@ async function getSongs(folder) {
 
   Array.from(
     document.querySelector(".songList").getElementsByTagName("li")
-  ).forEach((e) => {
-    e.addEventListener("click", (element) => {
-      playMusic(e.querySelector(".info").firstElementChild.innerHTML);
-      console.log(e.querySelector(".info").firstElementChild.innerHTML.trim());
+  ).forEach(e=> {
+    e.addEventListener("click", element => {
+      playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
+      // console.log("hello")
+      // console.log(e.querySelector(".info").firstElementChild.innerHTML);
     });
   });
 
@@ -104,7 +106,7 @@ async function displayAlbums() {
     }
   }
 
-  Array.from(document.getElementsByClassName("card")).forEach((e) => {
+  Array.from(document.getElementsByClassName("card")).forEach(e => {
     e.addEventListener("click", async (item) => {
       songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
       playMusic(songs[0])
