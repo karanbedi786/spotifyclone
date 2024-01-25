@@ -84,7 +84,7 @@ async function displayAlbums() {
     if (e.href.includes("/songs/") && !e.href.includes(".htaccess")) {
       let folder = e.href.split("/").slice(-1)[0];
       console.log(folder)
-      let a = await fetch(`/songs/${folder}/info.json`);
+      let a = await fetch(`/spotifyclone/songs/${folder}/info.json`);
       let response = await a.json();
       // console.log(response);
       cardContainer.innerHTML =
