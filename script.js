@@ -62,7 +62,7 @@ async function getSongs(folder) {
 }
 
 const playMusic = (track, pause = false) => {
-  currentSong.src = `/${currFolder}/` + track;
+  currentSong.src = `/spotifyclone/${currFolder}/` + track;
   if (!pause) {
     currentSong.play();
     play.src = "img/pause.svg";
